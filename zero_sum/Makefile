@@ -13,7 +13,7 @@ SRC :=				main.cpp		\
 OBJ =				$(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 # compilation flags
-CC_FLAGS :=			-Wall -Wextra -Werror
+CC_FLAGS :=			-std=c++11
 
 # header flags
 HEADER_FLAGS :=		-I$(INC_DIR)

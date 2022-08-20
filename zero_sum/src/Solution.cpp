@@ -19,18 +19,22 @@ Explanation: The subarray with zero-sum doesn't exist.
 
 */
 
-#include <vector>
-#include <iostream>
+#include "Solution.hpp"
 
-using namespace std;
-
-class Solution
+bool Solution::hasZeroSumSubarray(vector<int> const &nums)
 {
-public:
-    bool hasZeroSumSubarray(vector<int> const &nums)
+    int zero_sum;
+
+    for (auto j = 0; j < nums.size(); j++)
     {
-        // Write your code here...
-        cout << nums.size() << endl;
-        return true;
+        zero_sum = 0;
+        for (auto i = j; i < nums.size(); i++)
+        {
+            zero_sum += nums.at(i);
+            if (zero_sum == 0)
+                return true;
+        }
     }
-};
+
+    return false;
+}
